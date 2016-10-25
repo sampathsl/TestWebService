@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="Weather">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="WeatherData"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WeatherData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="offset"/>
+        <xs:element ref="currently"/>
+        <xs:element ref="timezone"/>
+        <xs:element ref="latitude"/>
+        <xs:element ref="daily"/>
+        <xs:element ref="flags"/>
+        <xs:element ref="hourly"/>
+        <xs:element ref="longitude"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="offset" type="xs:integer"/>
+  <xs:element name="currently">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="summary"/>
+        <xs:element ref="precipProbability"/>
+        <xs:element ref="precipIntensity"/>
+        <xs:element ref="icon"/>
+        <xs:element ref="cloudCover"/>
+        <xs:element ref="windBearing"/>
+        <xs:element ref="apparentTemperature"/>
+        <xs:element ref="pressure"/>
+        <xs:element ref="dewPoint"/>
+        <xs:element ref="ozone"/>
+        <xs:element ref="temperature"/>
+        <xs:element ref="humidity"/>
+        <xs:element ref="time"/>
+        <xs:element ref="windSpeed"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="timezone" type="xs:string"/>
+  <xs:element name="latitude" type="xs:decimal"/>
+  <xs:element name="daily">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="summary"/>
+        <xs:element maxOccurs="unbounded" ref="data"/>
+        <xs:element ref="icon"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="flags">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="sources"/>
+        <xs:element maxOccurs="unbounded" ref="isd-stations"/>
+        <xs:element ref="units"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sources" type="xs:NCName"/>
+  <xs:element name="isd-stations" type="xs:NMTOKEN"/>
+  <xs:element name="units" type="xs:NCName"/>
+  <xs:element name="hourly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="summary"/>
+        <xs:element maxOccurs="unbounded" ref="data"/>
+        <xs:element ref="icon"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="longitude" type="xs:decimal"/>
+  <xs:element name="summary" type="xs:string"/>
+  <xs:element name="precipProbability" type="xs:decimal"/>
+  <xs:element name="precipIntensity" type="xs:double"/>
+  <xs:element name="icon" type="xs:NCName"/>
+  <xs:element name="cloudCover" type="xs:decimal"/>
+  <xs:element name="windBearing" type="xs:integer"/>
+  <xs:element name="apparentTemperature" type="xs:decimal"/>
+  <xs:element name="pressure" type="xs:decimal"/>
+  <xs:element name="dewPoint" type="xs:decimal"/>
+  <xs:element name="ozone" type="xs:decimal"/>
+  <xs:element name="temperature" type="xs:decimal"/>
+  <xs:element name="humidity" type="xs:decimal"/>
+  <xs:element name="time" type="xs:integer"/>
+  <xs:element name="windSpeed" type="xs:decimal"/>
+  <xs:element name="data">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="apparentTemperatureMinTime"/>
+          <xs:element ref="temperatureMax"/>
+        </xs:sequence>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element ref="apparentTemperature"/>
+          <xs:element ref="cloudCover"/>
+          <xs:element ref="dewPoint"/>
+          <xs:element ref="humidity"/>
+          <xs:element ref="icon"/>
+          <xs:element ref="ozone"/>
+          <xs:element ref="precipIntensity"/>
+          <xs:element ref="precipProbability"/>
+          <xs:element ref="pressure"/>
+          <xs:element ref="summary"/>
+          <xs:element ref="temperature"/>
+          <xs:element ref="time"/>
+          <xs:element ref="windBearing"/>
+          <xs:element ref="windSpeed"/>
+          <xs:element ref="apparentTemperatureMax"/>
+          <xs:element ref="apparentTemperatureMin"/>
+          <xs:element ref="moonPhase"/>
+          <xs:element ref="precipAccumulation"/>
+          <xs:element ref="precipIntensityMax"/>
+          <xs:element ref="precipType"/>
+          <xs:element ref="sunriseTime"/>
+          <xs:element ref="sunsetTime"/>
+          <xs:element ref="temperatureMaxTime"/>
+          <xs:element ref="temperatureMin"/>
+          <xs:element ref="temperatureMinTime"/>
+        </xs:choice>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="precipIntensityMaxTime"/>
+          <xs:element ref="apparentTemperatureMaxTime"/>
+        </xs:sequence>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="apparentTemperatureMinTime" type="xs:integer"/>
+  <xs:element name="temperatureMax" type="xs:decimal"/>
+  <xs:element name="apparentTemperatureMax" type="xs:decimal"/>
+  <xs:element name="apparentTemperatureMin" type="xs:decimal"/>
+  <xs:element name="moonPhase" type="xs:decimal"/>
+  <xs:element name="precipAccumulation" type="xs:decimal"/>
+  <xs:element name="precipIntensityMax" type="xs:decimal"/>
+  <xs:element name="precipType" type="xs:NCName"/>
+  <xs:element name="sunriseTime" type="xs:integer"/>
+  <xs:element name="sunsetTime" type="xs:integer"/>
+  <xs:element name="temperatureMaxTime" type="xs:integer"/>
+  <xs:element name="temperatureMin" type="xs:decimal"/>
+  <xs:element name="temperatureMinTime" type="xs:integer"/>
+  <xs:element name="precipIntensityMaxTime" type="xs:integer"/>
+  <xs:element name="apparentTemperatureMaxTime" type="xs:integer"/>
+</xs:schema>
