@@ -21,6 +21,10 @@ public class Main {
 		
 		// System.out.println(ws.getFlagWeatherReportByLocation("50.115", "145.2626"));
 		
+		// now use the XSD generated beans
+		// use http://www.javatpoint.com/jaxb-unmarshalling-example
+		ws.getDailyWeatherReportByLocation("50.115", "145.2626");
+		
 	}
 
 }
