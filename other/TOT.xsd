@@ -3,13 +3,6 @@
   <xs:element name="Weather">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="WeatherData"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="WeatherData">
-    <xs:complexType>
-      <xs:sequence>
         <xs:element ref="offset"/>
         <xs:element ref="currently"/>
         <xs:element ref="timezone"/>
