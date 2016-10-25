@@ -6,7 +6,7 @@
 //
 
 
-package generated;
+package com.weather.service;
 
 import java.util.ArrayList;
 import java.util.List;

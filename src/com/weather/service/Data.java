@@ -6,7 +6,7 @@
 //
 
 
-package generated;
+package com.weather.service;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

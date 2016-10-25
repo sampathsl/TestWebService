@@ -6,7 +6,7 @@
 //
 
 
-package generated;
+package com.weather.service;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
